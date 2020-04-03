@@ -1,3 +1,12 @@
 class Show < ActiveRecord::Base
   
-end
+  has_many :actors, through: :characters
+  belongs_to :network 
+  
+  def actors_list
+    self.actors.collect do |actor|
+     "#{actor.first_name} #{actor.last_name}"
+    end
+  end
+ 
+end 
