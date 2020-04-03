@@ -1,6 +1,6 @@
 class Show < ActiveRecord::Base
   
-  has_many :actor, through: :character
+  has_many :actors, through: :character
   belongs_to :network 
   
   def actors_list
