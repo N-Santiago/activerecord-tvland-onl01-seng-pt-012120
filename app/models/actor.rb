@@ -12,6 +12,7 @@ class Actor < ActiveRecord::Base
     self.shows.collect do |show|  
      "#{character.actor.full_name} - #{character.name} - #{show.name}"
     end.join
+  end 
   end
   
 end
