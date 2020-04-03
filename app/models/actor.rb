@@ -9,10 +9,15 @@ class Actor < ActiveRecord::Base
   
   # def list_roles
   #   self.characters.collect do |character|
-  #   self.shows.collect do |show|  
-  #   "#{character.actor.full_name} - #{character.name} - #{show.name}"
+  #   "#{character.actor.full_name} - #{character.show.name}"
   #   end.join
   # end 
   # end
+    def list_roles
+    self.characters.collect do |character|
+     "#{character.name} - #{character.show.name}"
+    end.join
+  end
+end
   
 end
